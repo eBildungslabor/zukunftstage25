@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li>Wissenslücke</li>
+            </ul>
+        </nav>
+        <h2>Bearbeitung der identifizierten Wissenslücke</h2>
+        <p>Zur Vorbereitung der Zukunftstage warst du aufgefordert, eine Wissenslücke bei dir im Kontext von KI zu identifizieren, die du jetzt angehen könntest. Dabei kann dir eine Lernkontext-Datei helfen.</p>
+        
+        <h3>Was ist eine Lernkontext-Datei?</h3>
+        <p>Die Idee einer Lernkontext-Datei beruht auf der Idee eines ‚Personal Context Manager‘. Hintergrund dafür ist, dass ein KI-Sprachmodell von aus natürlich erst einmal keine Informationen zum jeweiligen Kontext der Nutzenden hat. Mit einem Personal Context Manager (= einer Datei, die mit dem KI-Sprachmodell geteilt wird) kann solch ein Kontext deshalb gleich zu Beginn des Chats eingeführt werden. Das führt dann zu passenderen und zielgerichteten Ausgaben.</p>
+        <p>Übertragen auf das Lernen bedeutet die Idee eines Personal Context Manager, dass ich meinen Lernkontext zu Beginn eines Chats deutlich mache. Ich kann also zum Beispiel inhaltliche Herausforderungen teilen, die ich angehen möchte oder schreiben, was ich bereits erfolgreich gelernt habe und woran ich anschließen will. Vor allem kann ich aber auch deutlich machen, welche Lernwerkzeuge ich nutze, welche Form von Feedback für mich besonders hilfreich ist und wie die Chats für mich besonders hilfreich sein können. Auf diese Weise kann das Lernen dann besser funktionieren. Erstens, weil ich klare Angaben mache. Zweitens und vor allem aber auch, weil ich vorab über mein eigenes Lernen reflektiere und so auf einer Metaebene vor allem auch das Lernen selbst lerne.</p>
+        
+        <h3>Gestalte eine Lernkontext-Datei für deine identifizierte Wissenslücke</h3>
+        <p>Mit der folgenden Vorlage kannst du dir eine Lernkontext-Datei gestalten. Fülle die ... - Stellen aus und ändere auch die anderen Vorgaben, wenn dir anderes besser erscheint. (Es kann sicherer sein, dir die Vorlage zu kopieren und lokal auf deinem Gerät auszufüllen.) Am besten arbeitest du dabei nicht isoliert, sondern im Austausch mit Kolleg*innen.</p>
+        
+        <h4>Datei zum Ausfüllen</h4>
+        <textarea id="contextFile" rows="10" style="width:100%;">
+Regel: Beachte die folgenden Aspekte, es sei denn ich gebe andere Anweisungen.
+Deine Rolle: Begleitung und Unterstützung bei der Bearbeitung einer von mir identifizierten Wissenslücke im Kontext von KI
+Meine Wissenslücke: ...
+Meine Rolle/ mein Kontext: ...
+Bisherige KI-Erfahrungen: ...
+Zugang zu KI-Tools: ...
+Weitere Hilfemöglichkeiten, die ich nutzen kann, auf die du mich bei Bedarf hinweist: viele Kolleg*innen vor Ort, die auch an Wissenslücken arbeiten, fachliche Expert*innen zum Thema KI, Internetrecherche-Möglichkeit, erstellte Wissensbasis mit Prompting-Techniken
+Sprache: Deutsch
+Tonalität: Per Du, Ansprache mit ..., kurzer und prägnanter Output
+Vorgehen: Erfrage meinen aktuellen Stand mit meiner Wissenslücke, kläre dann erst das grundsätzliche Vorgehen und begleite mich dann Schritt für Schritt. Erinnere mich daran, diesen Lernkontext zu aktualisieren.
+Art des Feedback: ...
+KI-Limitationen: Ich möchte die Limitationen von KI-Sprachmodellen kontinuierlich reflektieren. Mache transparent, wenn du keine eindeutige Antwort generieren kannst. Fordere mich grundsätzlich zur Überprüfung von generiertem Output auf.
+Metadaten: Version 1.0, 24.09.2025
+        </textarea>
+        <button onclick="copyText()">Kopiere in die Zwischenablage</button>
+
+        <h3>Nutze deine erstellte Lernkontext-Datei in Interaktion mit einem KI-Sprachmodell!</h3>
+        <p>Wenn du die Datei fertiggestellt hast, dann kannst du sie mit einem KI-Sprachmodell teilen und dich in Interaktion begeben. Es ist möglich, den Text direkt in ein Chatfenster einzufügen oder die Datei hochzuladen. Offen nutzbare KI-Sprachmodelle findest du via <a href="https://duck.ai">duck.ai</a>.</p>
+        <p>Falls du merkst, dass die Interaktion nicht so läuft, wie es für dich hilfreich wäre, dann passe die Vorlage an.</p>
+        
+        <h3>Reflektiere mit Kolleg*innen, wie die KI-Interaktion geklappt hat!</h3>
+        <p>Fast noch wichtiger als die Bearbeitung deiner konkreten Wissenslücke ist die Reflexion dazu, wie die Arbeit mit deiner Lernkontext-Datei geklappt hat. Tausche dich mit Kolleg*innen dazu aus!</p>
+        
+        <p><a href="index.html"><button class="outline">↤ Zur Startseite</button></a></p>
+    </main>
+    
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
+    </footer>
+
+    <script>
+    function copyText() {
+        const textArea = document.getElementById("contextFile");
+        textArea.select();
+        document.execCommand("copy");
+        alert("Text wurde in die Zwischenablage kopiert.");
+    }
+    </script>
+</body>
+</html>
