@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta charset="UTF-8">
- <link rel="stylesheet" href="css/pico.min.css">    <title>Zukunftstage 2025</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
 </head>
 <body>
-
-          <main class="container">
-
-                    <h1>Zukunftstage 2025</h1>
-                    
-                     <nav aria-label="breadcrumb">
-  <ul>
-    <li><a href="index.html">Start</a></li>
-    <li><a href="challenges.html">Challenges</a></li>
-    <li>Challenge #5</li>
-  </ul>
-</nav>
-
-            
-         
-              <h2>Mit einem KI-Sprachmodell Perspektivwechsel üben</h2>
-
-        
-     
-
-                <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li>Challenge #5</li>
+            </ul>
+        </nav>
+        <h2>Mit einem KI-Sprachmodell Perspektivwechsel üben</h2>
+        <p>Intuitiv würdest du dir wahrscheinlich von einem KI-Sprachmodell einen Inhalt zur Weiternutzung generieren lassen. Alternativ kannst du mit einem KI-Sprachmodell auch Spiele spielen und dich so in einen offenen Prozess des Lernens begeben. Hier ist zum Beispiel ein anpassbarer Prompt für ein Spiel, mit dem du dich in einem Perspektivwechsel üben kannst. Lies ihn dir gut durch, damit du deine Rolle korrekt spielst - sonst funktioniert der Prompt nicht. Insbesondere musst du mit einer ersten fiktiven Rolle und einem Zitat starten.</p>
+        <hr>
+        <blockquote>
+            <div id="resultContainer">
+                <p id="resultText">
+                    Ich möchte mit dir ein Spiel spielen, das folgendermaßen funktioniert.<br>
+                    1. Wir sind immer abwechselnd an der Reihe. Ich starte, dann du, dann schreibe ich wieder etwas, dann du. Usw. Das Spiel endet, wenn ich schreibe: Das Spiel ist zu Ende!<br>
+                    2. Wir nehmen in unseren Beiträgen immer eine zufällig ausgewählte Rolle aus der Erwachsenenbildung ein. Das kann eine Dozentin, eine lernende Person, eine Verwaltungsfachkraft ... sein. Sie können unterschiedliche Ausprägungen haben (z.B. eine überforderte Dozentin, eine ältere Frau, die Digitalisierung skeptisch gegenüber steht ...) In jedem Beitrag entscheiden wir uns für eine andere Rolle.<br>
+                    3. Wir bauen unseren Beitrag folgendermaßen auf: Ich bin [fiktiver Name und Infos zu meinen Charakteristika]. Ich habe von dir diese Aussage gehört: [Wiederholung der Aussage von dem Beitrag davor]. Ich denke dazu: [Ganz kurze Erläuterung der Perspektive]. Das bringt mich stattdessen zu dieser Aussage: [neue Aussage].<br>
+                    4. Die Beiträge sollen in sich logisch formuliert sein und immer eine veränderte Perspektive zum vorherigen Beitrag aufmachen. Der erste Beitrag wird von mir stammen. Da es der erste Beitrag ist, kann ich da noch nicht auf einen früheren Beitrag Bezug nehmen.<br>
+                    Wenn du das Spiel verstanden hast, dann fordere mich zu einem ersten Zitat einer fiktiven Persona heraus.
+                </p>
+            </div>
+            <button id="copyButton">Text kopieren</button>
+        </blockquote>
+        <hr>
+        <p>Frei und ohne Registrierung zugängliche KI-Sprachmodelle findest du z.B. über <a href="https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1&atb=v414-1">diesen Link bei der Suchmaschine DuckDuckGo</a>.</p>
+        <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
     </main>
-
     
- <footer class="container">
-     <hr>
-      <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a>
- <br>Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
- </footer>
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
+    </footer>
+
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const textToCopy = document.getElementById('resultText').innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Text wurde in die Zwischenablage kopiert.');
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
+            });
+        });
+    </script>
 </body>
+</html>
