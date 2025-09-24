@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta charset="UTF-8">
- <link rel="stylesheet" href="css/pico.min.css">    <title>Zukunftstage 2025</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
 </head>
 <body>
-
-          <main class="container">
-
-                    <h1>Zukunftstage 2025</h1>
-                    
-                     <nav aria-label="breadcrumb">
-  <ul>
-    <li><a href="index.html">Start</a></li>
-    <li><a href="challenges.html">Challenges</a></li>
-    <li>Challenge #11</li>
-  </ul>
-</nav>
-
-            
-         
-              <h2>KI-Sprachmodell als Ideengeber ausprobieren</h2>
-
-        
-     
-
-                <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li>Challenge #11</li>
+            </ul>
+        </nav>
+        <h2>KI-Sprachmodell als Ideengeber nutzen</h2>
+        <p>Bei dieser Übung wird Euch ein KI-Sprachmodell mögliche Ideen zur Herausforderung kluger KI-Nutzung im Kontext der Erwachsenenbildung zu einem von Euch definierten Rahmen vorgeben. In Vorbereitung fertigt ihr zwei Listen mit je 6 Begriffen an. Für die erste Liste einigt ihr euch auf 6 Begriffe, die eine gute KI-Nutzung ausmachen. Auf die zweite Liste kommen 6 Begriffe, die eine schlechte KI-Nutzung ausmachen.</p>
+        <p>Dann kann es losgehen. Kopiert euch hier den benötigten Prompt. Dann führt euch das von euch gewählte KI-Sprachmodell durch den Prozess.</p>
+        <blockquote>
+            <div id="prompt-text">
+                Du begleitest eine Gruppe in einem Spiel zur kreativen Auseinandersetzung mit guter KI-Nutzung im Kontext der Erwachsenenbildung.<br>
+                Die Gruppe hat zwei Listen mit jeweils sechs Begriffen erstellt:<br>
+                Eine „Negativliste“ mit typischen Merkmalen schlechter KI-Nutzung.<br>
+                Eine „Positivliste“ mit Merkmalen guter, zukunftsfähiger KI-Nutzung.<br>
+                <br>
+                Der Ablauf des Spiels ist wie folgt:<br>
+                <br>1. Eine Person würfelt – für sich.<br>
+                2. Sie nutzt die beiden Zahlen, um jeweils einen Begriff aus der Negativliste und der Positivliste auszuwählen.<br>
+                3. **Nur die beiden ausgewählten Begriffe werden dir genannt.** Die Zahlen bleiben für dich irrelevant.<br>
+                4. Wenn die beiden Begriffe genannt wurden, reagierst du:<br>
+                - Formuliere **drei kurze, kreative Ideen**, wie man in der Praxis vom negativen zum positiven Zustand kommen könnte – oder wie man den positiven Aspekt noch weiter stärken kann.<br>
+                - Die Ideen dürfen unterschiedlich sein (z. B. ein Impuls, eine Methode, ein Perspektivwechsel) – aber alle sollen umsetzbar oder inspirierend sein. Orientiere dich dabei im Kontext pädagogischer Leitbilder wie Nachhaltigkeit, Kollaboration, Selbstwirksamkeit, Resilienz, Partizipation, Offenheit und Vielfalt.<br>
+                5. Fordere die Gruppe auf, darüber zu beratschlagen, welche Idee sie am besten finden oder ob ihnen eine ganz andere Idee einfällt oder ob sie eine Idee anpassen wollen. Frage dann, ob es weiter gehen kann.<br>
+                6. Sobald die Person „weiter“ sagt, sprichst du die nächste Person an und forderst sie auf, **zu würfeln, die zwei Begriffe aus der Liste zu suchen und dir diese mitzuteilen.**<br>
+                7. Wenn niemand mehr antwortet oder das Spiel endet: Bedanke dich freundlich für die Teilnahme und verabschiede dich.<br>
+                <br>
+                Wichtig:<br>
+                - Du bekommst **immer nur zwei Begriffe** genannt – du arbeitest **nicht mit den Würfelzahlen**.<br>
+                - Deine drei Ideen sollen klar, unterschiedlich und inspirierend sein – keine langen Erklärungen, sondern Impulse zum Weiterdenken.<br>
+                - Bleibe im Ton freundlich, offen und ermutigend.<br>
+                <br>
+                Beginne jetzt mit einer kurzen Begrüßung und fordere die erste Person auf, zu würfeln, ihre zwei Begriffe aus den Listen zu wählen und sie dir mitzuteilen.
+            </div>
+            <button onclick="copyPrompt()">Prompt kopieren</button>
+        </blockquote>
     </main>
-
     
- <footer class="container">
-     <hr>
-      <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a>
- <br>Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
- </footer>
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
+    </footer>
+
+    <script>
+        function copyPrompt() {
+            const textToCopy = document.getElementById('prompt-text').innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Text wurde in die Zwischenablage kopiert.');
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
+            });
+        }
+    </script>
 </body>
+</html>
