@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li>Walk & Talk</li>
+            </ul>
+        </nav>
+        <h2>Walk & Talk</h2>
+        <p>Die Idee eines Walk & Talk ist es, bei einer Konferenz zwischendrin in Bewegung zu kommen und den Kopf zu lüften, indem man sich auf einen kleinen Spaziergang begibt. Dabei lässt sich ganz wunderbar mit Kolleg*innen in den Austausch kommen.</p>
+
+        <h3>Impulse zum heutigen Walk & Talk</h3>
+        <p>Wenn du mitlaufen möchtest, dann schließe dich mit 2-3 Kolleg*innen zusammen. Ihr könnt entweder einfach über eure bisherigen Erfahrungen mit den KI-Erkundungen reflektieren. Alternativ findet ihr hier Impulse zur ethischen Reflexion von KI. Ihr könnt dazu jeweils besprechen: Was steht da? Was bedeutet das? Was leiten wir für uns dazu ab?</p>
+
+        <article id="impulsCard">
+            <h4>Impuls</h4>
+            <p id="impulsText"></p>
+            <button onclick="zeigeNächstenImpuls()">Nächster Impuls</button>
+        </article>
+
+        <p><a href="index.html"><button class="outline">↤ Zur Startseite</button></a></p>
+    </main>
+    
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
+    </footer>
+
+    <script>
+        const impulse = [
+            '**KI basiert auf menschlicher Arbeit**\nGroße Sprachmodelle entstehen nicht von selbst – sie beruhen auf der Arbeit vieler Menschen. Inhalte, Programmierungen sowie die Klassifizierung und Filterung von Daten werden von Menschen erstellt. Ein Großteil dieser Arbeit wird in den globalen Süden ausgelagert und schlecht bezahlt.',
+            '**KI spiegelt die Vergangenheit wider**\nSprach- und Bild-KIs lernen aus bestehenden Daten und reproduzieren daher vergangene Muster und Vorurteile. Beispiel: Bild-KIs zeigen oft weiße Männer als Redner auf Konferenzen, weil solche Darstellungen in den Trainingsdaten überwiegen.',
+            '**KI verstärkt soziale Ungleichheiten**\nDer Nutzen und die Nachteile von KI-Technologien sind ungleich verteilt. Oft gilt das Matthäus-Prinzip: Wer bereits Vorteile hat, profitiert weiter – während andere zurückbleiben oder sogar verlieren.',
+            '**KI ist nicht neutral**\nKI-Systeme sind keine objektiven Werkzeuge, sondern spiegeln gesellschaftliche Entscheidungen wider. Welche Daten genutzt werden, welche Einstellungen vorgenommen werden und welche Filter greifen, sind keine Zufälle. Bei großen Anbietern wie OpenAI gibt es darüber kaum Transparenz oder Mitbestimmungsmöglichkeiten.',
+            '**KI verbraucht enorme Ressourcen**\nDie Entwicklung und Nutzung von KI benötigt riesige Mengen an Energie und Rechenleistung – in einer Zeit, in der die Klimakrise ohnehin an kritischen Punkten steht.'
+        ];
+
+        let aktuellerImpulsIndex = 0;
+
+        function zeigeNächstenImpuls() {
+            document.getElementById('impulsText').innerText = impulse[aktuellerImpulsIndex];
+            aktuellerImpulsIndex = (aktuellerImpulsIndex + 1) % impulse.length;
+        }
+
+        // Initialer Impuls anzeigen
+        zeigeNächstenImpuls();
+    </script>
+</body>
+</html>
