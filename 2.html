@@ -1,39 +1,66 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta charset="UTF-8">
- <link rel="stylesheet" href="css/pico.min.css">    <title>Zukunftstage 2025</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
 </head>
 <body>
-
-          <main class="container">
-
-                    <h1>Zukunftstage 2025</h1>
-                    
-                     <nav aria-label="breadcrumb">
-  <ul>
-    <li><a href="index.html">Start</a></li>
-    <li><a href="challenges.html">Challenges</a></li>
-    <li>Challenge #2</li>
-  </ul>
-</nav>
-
-            
-         
-              <h2>Dich von einem KI-Sprachmodell herausfordern lassen</h2>
-
-        
-     
-
-                <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li>Challenge #2</li>
+            </ul>
+        </nav>
+        <h2>Dich von einem KI-Sprachmodell herausfordern lassen</h2>
+        <p>Intuitiv würdest du dir wahrscheinlich Inhalte von einem KI-Sprachmodell generieren lassen. Wenn du allerdings selbst ins Denken kommen und an deinen Inhalten weiterarbeiten willst, ist ein umgedrehter Ansatz der bessere Weg. Hier sind mögliche Prompts dazu:</p>
+        <hr>
+        <blockquote>
+            <div id="resultContainer">
+                <p id="prompt1">Ich möchte Thema xy besser verstehen. Lass uns einen sokratischen Dialog dazu führen! Du nimmst die Rolle von Sokrates ein, der mir eine Frage nach der anderen stellt. Du gehst schrittweise vor und wartest immer auf meine Antwort zu deiner Frage. Ich beantworte diese. Dann stellst du die nächste Frage.</p>
+                <button class="copyButton" data-target="prompt1">Prompt kopieren</button>
+                <hr>
+                <p id="prompt2">Ich teile einen Text mit dir. Du gibst ihn mir anschließend Abschnitt für Abschnitt zurück und gibst mir dazu jeweils eine Anregung, was ich verbessern kann. Ich sage dir, ob ich das sinnvoll finde oder nicht. Am Ende gibst du mir eine Liste mit allen Aspekten, zu denen ich zugesagt habe, sie zu verbessern, als Checkliste.</p>
+                <button class="copyButton" data-target="prompt2">Prompt kopieren</button>
+                <hr>
+                <p id="prompt3">Generiere mir eine Liste mit 10 Personas, die potentiell in Lernangeboten zu ... lernen (möchten). Ich gebe dir dann eine Ausschreibung/ unser Kursprogramm/ ein Konzept ... und nenne nacheinander unterschiedliche Personas aus deiner Liste. Du versetzt dich in diese Persona hinein und spiegelst mir, was diese Persona an meinem geteilten Inhalt kritisch sehen könnte oder was ihr Lernen verhindern würde.</p>
+                <button class="copyButton" data-target="prompt3">Prompt kopieren</button>
+                <hr>
+                <p id="prompt4">Wir spielen ein Spiel. Ich schreibe eine Aussage zu KI in meinem beruflichen Kontext - und direkt daran anschließend die Warum-Frage dazu. Du beantwortest die Warum-Frage und hinterfragst wiederum deine Antwort mit einem Warum. Wenn ich Stopp sage, fragst du mich, was ich aus dem Frage-Antwort-Spiel besonders spannend fand - und schreibst mir in Reaktion auf meine Antwort, was du besonders kreativ und neu empfindest.</p>
+                <button class="copyButton" data-target="prompt4">Prompt kopieren</button>
+            </div>
+        </blockquote>
+        <hr>
+        <p>Vielleicht fallen Euch noch weitere Möglichkeiten ein, wie ihr euch von einem KI-Sprachmodell herausfordern lassen könnt.</p>
+        <p>Frei und ohne Registrierung zugängliche KI-Sprachmodelle findest du z.B. über <a href="https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1&atb=v414-1">diesen Link bei der Suchmaschine DuckDuckGo</a>.</p>
+        <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
     </main>
-
     
- <footer class="container">
-     <hr>
-      <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a>
- <br>Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
- </footer>
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
+    </footer>
+
+    <script>
+        const copyButtons = document.querySelectorAll('.copyButton');
+        
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const textToCopy = document.getElementById(targetId).innerText;
+
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    alert('Text wurde in die Zwischenablage kopiert.');
+                }).catch(err => {
+                    console.error('Fehler beim Kopieren: ', err);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
