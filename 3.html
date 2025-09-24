@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta charset="UTF-8">
- <link rel="stylesheet" href="css/pico.min.css">    <title>Zukunftstage 2025</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
 </head>
 <body>
-
-          <main class="container">
-
-                    <h1>Zukunftstage 2025</h1>
-                    
-                     <nav aria-label="breadcrumb">
-  <ul>
-    <li><a href="index.html">Start</a></li>
-    <li><a href="challenges.html">Challenges</a></li>
-    <li>Challenge #3</li>
-  </ul>
-</nav>
-
-            
-         
-              <h2>Mit einem KI-Sprachmodell Modellierung üben</h2>
-
-        
-     
-
-                <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li>Challenge #3</li>
+            </ul>
+        </nav>
+        <h2>Mit einem KI-Sprachmodell Modellierung üben</h2>
+        <p>Modellierung praktizieren meint das bewusste Entwerfen, Erproben und Weiterentwickeln eigener Denk- und Handlungsstrategien ausgehend von bereits bestehenden Kompetenzen und Wissen. Lernende externalisieren mentale Modelle, machen so ihre Überlegungen sichtbar und arbeiten daran weiter.</p>
+        <p>Um Modellierung in Interaktion mit KI-Sprachmodellen praktisch auszuprobieren, wirst du gleich dazu eingeladen, deine eigene These zu veränderter Lehre im Kontext von KI zu formulieren (= Externalisierung deines mentalen Modells) und mit einem KI-Sprachmodell weiterzuentwickeln (= Modellierung). Der folgende Prompt hilft dir dabei.</p>
+        <blockquote>
+            <div id="prompt-text">
+                Bitte begleite mich in einem Reflexionsprozess. Ich möchte eine eigene These zu veränderter Lehre im Kontext von KI formulieren und weiterentwickeln. Beginne, indem du mich bittest, meine These aufzuschreiben. Wenn ich die These nenne, gehe dann wie folgt vor:<br>
+                1. Nenne drei Argumente, die meine These stützen könnten. Frage mich dann, ob ich weitere Argumente möchte oder ob du weitermachen kannst.<br>
+                2. Nenne drei Gegenargumente oder Einschränkungen. Frage mich dann, ob ich weitere Gegenargumente möchte oder ob du weitermachen kannst.<br>
+                3. Gib mir zwei Fallbeispiele: eines, das die These bestätigt, und eines, das sie widerlegt. Frage mich dann, ob ich weitere Fallbeispiele wünsche oder ob du zum Abschluss kommen kannst.<br>
+                4. Bitte mich abschließend, die These auf Basis der Argumente und Beispiele anzupassen. Wenn ich dir eine überarbeitete Version nenne, mache einen Vorschlag für eine alternative Formulierung.<br>
+                Nutze bitte eine klare, strukturierte Sprache und einen freundlichen, unterstützenden Ton.
+            </div>
+            <button onclick="copyPrompt()">Prompt kopieren</button>
+        </blockquote>
+        <p><a href="challenges.html"><button class="outline">↤ Zur Übersicht der Challenges</button></a></p>
     </main>
-
     
- <footer class="container">
-     <hr>
-      <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a>
- <br>Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
- </footer>
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Deutschen Rentenversicherung Oldenburg-Bremen.</small>
+    </footer>
+
+    <script>
+        function copyPrompt() {
+            const textToCopy = document.getElementById('prompt-text').innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Text wurde in die Zwischenablage kopiert.');
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
+            });
+        }
+    </script>
 </body>
+</html>
