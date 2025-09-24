@@ -37,20 +37,21 @@
     </footer>
 
     <script>
-        const impulse = [
-            '**KI basiert auf menschlicher Arbeit**\nGroße Sprachmodelle entstehen nicht von selbst – sie beruhen auf der Arbeit vieler Menschen. Inhalte, Programmierungen sowie die Klassifizierung und Filterung von Daten werden von Menschen erstellt. Ein Großteil dieser Arbeit wird in den globalen Süden ausgelagert und schlecht bezahlt.',
-            '**KI spiegelt die Vergangenheit wider**\nSprach- und Bild-KIs lernen aus bestehenden Daten und reproduzieren daher vergangene Muster und Vorurteile. Beispiel: Bild-KIs zeigen oft weiße Männer als Redner auf Konferenzen, weil solche Darstellungen in den Trainingsdaten überwiegen.',
-            '**KI verstärkt soziale Ungleichheiten**\nDer Nutzen und die Nachteile von KI-Technologien sind ungleich verteilt. Oft gilt das Matthäus-Prinzip: Wer bereits Vorteile hat, profitiert weiter – während andere zurückbleiben oder sogar verlieren.',
-            '**KI ist nicht neutral**\nKI-Systeme sind keine objektiven Werkzeuge, sondern spiegeln gesellschaftliche Entscheidungen wider. Welche Daten genutzt werden, welche Einstellungen vorgenommen werden und welche Filter greifen, sind keine Zufälle. Bei großen Anbietern wie OpenAI gibt es darüber kaum Transparenz oder Mitbestimmungsmöglichkeiten.',
-            '**KI verbraucht enorme Ressourcen**\nDie Entwicklung und Nutzung von KI benötigt riesige Mengen an Energie und Rechenleistung – in einer Zeit, in der die Klimakrise ohnehin an kritischen Punkten steht.'
-        ];
+       const impulse = [
+    '<strong>KI basiert auf menschlicher Arbeit</strong><br>Große Sprachmodelle entstehen nicht von selbst – sie beruhen auf der Arbeit vieler Menschen. Inhalte, Programmierungen sowie die Klassifizierung und Filterung von Daten werden von Menschen erstellt. Ein Großteil dieser Arbeit wird in den globalen Süden ausgelagert und schlecht bezahlt.',
+    '<strong>KI spiegelt die Vergangenheit wider</strong><br>Sprach- und Bild-KIs lernen aus bestehenden Daten und reproduzieren daher vergangene Muster und Vorurteile. Beispiel: Bild-KIs zeigen oft weiße Männer als Redner auf Konferenzen, weil solche Darstellungen in den Trainingsdaten überwiegen.',
+    '<strong>KI verstärkt soziale Ungleichheiten</strong><br>Der Nutzen und die Nachteile von KI-Technologien sind ungleich verteilt. Oft gilt das Matthäus-Prinzip: Wer bereits Vorteile hat, profitiert weiter – während andere zurückbleiben oder sogar verlieren.',
+    '<strong>KI ist nicht neutral</strong><br>KI-Systeme sind keine objektiven Werkzeuge, sondern spiegeln gesellschaftliche Entscheidungen wider. Welche Daten genutzt werden, welche Einstellungen vorgenommen werden und welche Filter greifen, sind keine Zufälle. Bei großen Anbietern wie OpenAI gibt es darüber kaum Transparenz oder Mitbestimmungsmöglichkeiten.',
+    '<strong>KI verbraucht enorme Ressourcen</strong><br>Die Entwicklung und Nutzung von KI benötigt riesige Mengen an Energie und Rechenleistung – in einer Zeit, in der die Klimakrise ohnehin an kritischen Punkten steht.'
+];
 
         let aktuellerImpulsIndex = 0;
 
-        function zeigeNächstenImpuls() {
-            document.getElementById('impulsText').innerText = impulse[aktuellerImpulsIndex];
-            aktuellerImpulsIndex = (aktuellerImpulsIndex + 1) % impulse.length;
-        }
+      function zeigeNächstenImpuls() {
+    document.getElementById('impulsText').innerHTML = impulse[aktuellerImpulsIndex];
+    aktuellerImpulsIndex = (aktuellerImpulsIndex + 1) % impulse.length;
+}
+        
 
         // Initialer Impuls anzeigen
         zeigeNächstenImpuls();
