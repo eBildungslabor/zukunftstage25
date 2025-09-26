@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Zukunftstage 2025</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Zukunftstage 2025</h1>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li>Ausarbeitung einer Idee</li>
+            </ul>
+        </nav>
+        <h2>Ausarbeitung einer Idee</h2>
+        <p>Zur Ausarbeitung einer Idee habt ihr euch in einer Kleingruppe zusammengefunden und eine zuvor entwickelte Herausforderung erhalten. Ihr habt bis 12.30 Uhr Zeit und werdet Eure Ausarbeitung in einem so genannten Elevator Pitch ab 13.30 Uhr im Plenum präsentieren. Eine Person aus Eurer Gruppe sollte im Folgenden die Moderation übernehmen. Diese Person kann sich dann an der folgenden Anleitung orientieren.</p>
+
+     
+        <h3>Anleitung</h3>
+        <p>Zur Ausarbeitung Eurer Idee könnt ihr Euch an dieser Anleitung orientieren.</p>
+        <ol>
+        <li>Startet mit einer schnellen Blitzlicht-Runde, in der alle kurz sagen, was ihnen zu der Herausforderung spontan einfällt. Es geht noch nicht um eine Diskussion, sondern um ein erstes Einfinden.
+        <li>Steigt vertiefter in die Diskussion ein. Was könntet ihr wie genau vorschlagen? Haltet dazu Notizen <a href="https://write.kits.app/document/fbc655ef-fdec-4d81-826b-fba9e82d8113">in dieser kollaborativen Schreibumgebung (= Pad)</a> fest. Zusätzlich könnt ihr auch analog dokumentieren, z.B. auf einem Flipchart. 
+        <li>Fokussiert Euch ab spätestens 12.00 Uhr auf die Ausarbeitung eines Elevator Pitches (= einer kurzen und prägnanten Vorstellung Eurer Idee). Die Vorlage dazu findet ihr direkt in Eurem Pad.
+        <li>Entscheidet Euch, wer Euren Elevator Pitch nach dem Mittagessen im Plenum vorstellt.
+        <li>Schreibt einen griffigen und prägnanten Namen für Eure Ausarbeitung gut leserlich auf eine Karte und bringt sie ins Plenum mit.
+        </ol>
+
+        <h4>Vorlage Elevator Pitch</h4>
+        <p>Die Vorlage für den Elevaor Pitch findet ihr direkt in Eurem Pad. Ihr könnt sie aber auch von hier kopieren, falls ihr sie im Pad versehentlich gelöscht habt:</p>
+    
+        <textarea id="contextFile" rows="10" style="width:100%;">
+Prägnanter und attraktiver Titel:
+Kurze Beschreibung in einem Satz: Worum geht es?
+
+Bis zu drei Gründe, warum diese Idee eine gute Sache ist:
+1:
+2:
+3:
+
+Nächster Schritt: Ein sehr konkreter Schritt, was als erstes getan werden sollte.
+
+        </textarea>
+        <button onclick="copyText()">Kopiere in die Zwischenablage</button>
+
+       </p>
+    </main>
+    
+    <footer class="container">
+        <hr>
+        <small>Erstellt von Nele Hirsch (<a href="https://ebildungslabor.de">eBildungslabor</a>) | Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a><br>
+        Durchgeführt am 25. und 26. September 2025 in Oldenburg im Auftrag der Rentenversivherungsträger NORD der Deutschen Rentenversicherung</small>
+    </footer>
+
+    <script>
+    function copyText() {
+        const textArea = document.getElementById("contextFile");
+        textArea.select();
+        document.execCommand("copy");
+        alert("Text wurde in die Zwischenablage kopiert.");
+    }
+    </script>
+</body>
+</html>
